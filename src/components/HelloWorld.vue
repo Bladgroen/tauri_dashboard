@@ -4,22 +4,6 @@ import { ref } from "vue";
 defineProps<{ msg: string }>();
 
 const count = ref(0);
-const options = {
-  weekday: "short",
-  year: "numeric",
-  day: "numeric",
-  month: "long",
-  hour: "numeric",
-  minute: "numeric",
-};
-let today = new Date();
-
-let format = today.toLocaleDateString("nl", options).replace(/,/g, "");
-console.log(format.replace("om", ""));
-
-setInterval(() => {
-  console.log(today.toLocaleDateString("nl", options).replace(/,/g, ""));
-}, 1000);
 </script>
 
 <template>
