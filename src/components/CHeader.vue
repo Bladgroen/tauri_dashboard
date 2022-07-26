@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <p>{{ state.currentDate }}</p>
+  <div class="header">
+    <p class="header__date">{{ state.currentDate }}</p>
   </div>
 </template>
 
@@ -41,4 +41,17 @@ setTimeout(function () {
 // }),
 </script>
 
-<style lang=""></style>
+<style scoped lang="scss">
+.header {
+  background-color: black;
+  top: 0;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+  &__date {
+    color: white;
+    margin: 0;
+    padding: 1rem;
+  }
+}
+</style>
