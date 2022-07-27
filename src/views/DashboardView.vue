@@ -69,7 +69,6 @@
           <b>Vincent</b>
         </td>
         <td align="center" colspan="1" height="50" ref="taskref">task</td>
-        <p>{{ state.indicatorPosition }}</p>
         <td align="center" colspan="1" height="50">task</td>
         <td align="center" colspan="1" height="50">task</td>
         <td align="center" colspan="1" height="50">task</td>
@@ -96,16 +95,17 @@ const hourRef = ref(null);
 //TODO elke 5min opnieuw
 async function testfunction() {
   const userRefValue = userRef.value;
+
   const hourRefValue = hourRef.value;
-  let position = DashboardLogic.initIndicatorPosition(hourRefValue.clientWidth);
+  let position = DashboardLogic.initIndicatorPosition(
+    hourRefValue.clientWidth * 2
+  );
   state.indicatorPosition = userRefValue.clientWidth + position;
 }
 
-console.log("init", DashboardLogic.initIndicatorPosition(50));
-
 onMounted(async () => {
   await testfunction();
-  console.log(state.indicatorPosition);
+  console.log("de voledige lengte", state.indicatorPosition);
 });
 </script>
 
